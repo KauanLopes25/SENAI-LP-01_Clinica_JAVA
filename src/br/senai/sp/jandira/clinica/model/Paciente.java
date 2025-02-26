@@ -1,13 +1,34 @@
+/*
+ * PROGRAMADOR: Kauan Lopes
+ * Data: 26/02/2025
+ * Local: SENAI
+ */
+
 package br.senai.sp.jandira.clinica.model;
 
 import java.time.LocalDate;
 
 public class Paciente {
-	public String name;
+	private String name;
 	public LocalDate birthDate;
 	public int weight;
-	public double height;
+	private double height;
 	public String phone;
+	
+	public void setName(String name) {
+		if (name.trim().length() > 3) {
+			this.name = name.toUpperCase();
+		} else {
+			System.out.println("O nome "+name+ ", não é válido!\nO nome deve conter pelo menos 3 caracteres!");
+		}
+	}
+	public void setHeight(double height) {
+		if (height > 0) {
+			this.height = height;
+		} else {
+			System.out.println("Altura inválida");
+		}
+	}
 	
 	public void calcularIdade() {
 		
