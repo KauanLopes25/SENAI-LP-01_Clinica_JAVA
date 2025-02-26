@@ -14,6 +14,7 @@ public class Paciente {
 	public int weight;
 	private double height;
 	public String phone;
+	private double imc;
 	
 	public void setName(String name) {
 		if (name.trim().length() > 3) {
@@ -23,19 +24,24 @@ public class Paciente {
 		}
 	}
 	public void setHeight(double height) {
-		if (height > 0) {
+		if (height >= 0) {
 			this.height = height;
 		} else {
-			System.out.println("Altura inválida");
+			System.out.println("Altura do(a) paciente "+name+"\ndeve ser um valor maior ou igual a zero");
 		}
 	}
 	
 	public void calcularIdade() {
 		
 	}
+	//Assim o calculo é realizado mas não retorna
+	//public void calcularImc() {
+		//imc = weight/ Math.pow(height, 2);
+	//}
 	
-	public void calcularImc() {
-		
+	private double calcularImc() {
+		imc = weight/ Math.pow(height, 2);
+		return imc;
 	}
 	
 	public void classificarImc() {
@@ -49,6 +55,7 @@ public class Paciente {
 		System.out.println("Nome:" + name);
 		System.out.println("Altura:" + height);
 		System.out.println("Peso:" + weight);
+		System.out.println("IMC:" + String.format("%.1f",calcularImc()));
 		System.out.println("Telefone:" + phone);
 		System.out.println("==================");
 		

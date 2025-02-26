@@ -19,8 +19,8 @@ public class Clinica {
 		Paciente p2 = new Paciente();
 		p2.setName("Kauan Lopes");
 		p2.birthDate = LocalDate.of(2002, 12, 02);
-		p2.setHeight(-1.75);
-		p2.weight = 68;
+		p2.setHeight(1.75);
+		p2.weight = 64;
 		p2.phone = "(11)92513-2925";
 		
 		//Exibindo a referência dos objetos
